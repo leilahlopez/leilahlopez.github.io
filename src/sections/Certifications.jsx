@@ -34,6 +34,17 @@ const certs = [
         image: "/MTA-SD.png",
         link: "https://www.credly.com/badges/5d9cec88-48ed-47e5-9c26-941c7947f7da?source=linked_in_profile",
     },
+        { 
+        title: "Introduction to Front-End Development",
+        company: "Meta",
+        date: "August 2022",
+        id: "Credential ID: A3ZFA4PTXGCF",
+        technologies: ["React"],
+        description:
+        "Earners of this course certificate have demonstrated understanding ofDistinguish between front-end, back-end, and full-stack developers. The benefits of working with UI frameworks, and how to create and style a webpage with HTML and CSS.",
+        image: "/meta.jpg",
+        link: "https://www.coursera.org/account/accomplishments/certificate/A3ZFA4PTXGCF",
+    },
 ];
 
 export const Certifications = () => {
