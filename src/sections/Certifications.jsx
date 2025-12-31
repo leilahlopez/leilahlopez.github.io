@@ -3,27 +3,6 @@ import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
 
 const certs = [
     { 
-        title: "SCRUM FOUNDATION PROFESSIONAL CERTIFICATION- SFPC™",
-        company: "Certiprof",
-        date: "September 2023",
-        id: "Credential ID 89574222",
-        technologies: ["Agile", "Scrum"],
-        description: "Professional Scrum Certification.",
-        image: "/certiprof_logo.jpg",
-        link: "",
-    },
-    { 
-        title: "React + Redux",
-        company: "SOLOLEARN",
-        date: "December 2021",
-        id: "Certificate #1097-24385680",
-        technologies: ["React", "Redux"],
-        description:
-        "Earners of this course certificate have demonstrated understanding of core concepts of the react and redux libraries, including JSX, Virtual DOM, Components, hooks, reducers, state management, event-handling, and lifescycle methods.",
-        image: "/sololearn.png",
-        link: "https://www.sololearn.com/Certificate/CT-ZURSGNFJ/jpg",
-    },
-    { 
         title: "MTA: Software Development Fundamentals",
         company: "Microsoft",
         date: "December 2021",
@@ -45,6 +24,28 @@ const certs = [
         image: "/meta.jpg",
         link: "https://www.coursera.org/account/accomplishments/certificate/A3ZFA4PTXGCF",
     },
+    { 
+        title: "SCRUM FOUNDATION PROFESSIONAL CERTIFICATION- SFPC™",
+        company: "Certiprof",
+        date: "September 2023",
+        id: "Credential ID 89574222",
+        technologies: ["Agile", "Scrum"],
+        description: "Professional Scrum Certification.",
+        image: "/certiprof_logo.jpg",
+        link: "",
+    },
+    { 
+        title: "React + Redux",
+        company: "SOLOLEARN",
+        date: "December 2021",
+        id: "Certificate #1097-24385680",
+        technologies: ["React", "Redux"],
+        description:
+        "Earners of this course certificate have demonstrated understanding of core concepts of the react and redux libraries, including JSX, Virtual DOM, Components, hooks, reducers, state management, event-handling, and lifescycle methods.",
+        image: "/sololearn.png",
+        link: "https://www.sololearn.com/Certificate/CT-ZURSGNFJ/jpg",
+    },
+    
 ];
 
 export const Certifications = () => {
@@ -85,7 +86,7 @@ export const Certifications = () => {
         </div>
 
         {/* certs Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-4 gap-8">
          {certs.map((cert, idx) => (
             <div
                 key={idx}

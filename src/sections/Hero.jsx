@@ -2,18 +2,18 @@ import { Button } from "@/components/Button";
 import {
   ArrowRight,
   ChevronDown,
-  Linkedin,
-  Twitter,
   Download,
 } from "lucide-react";
 import GithubIcon from "@/assets/github.svg?react";
+import LinkedInIcon from "@/assets/linkedin.svg?react";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 
 const skills = [
   "React",
-  "Next.js",
+  "NestJS",
   "TypeScript",
   "Angular",
+  "C#",
   "Node.js",
   ".NET Framework",
   "Agile Methodology",
@@ -22,6 +22,7 @@ const skills = [
   "Docker",
   "Tailwind CSS",
   "HTML",
+  "Canvas",
   "Bootstrap",
   "Jest",
   "Postman",
@@ -85,8 +86,9 @@ export const Hero = () => {
           <div className="space-y-8 layer-2">
             <div className="animate-fade-in">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
-                <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                Full-Stack Software Developer • NestJS & React Specialist
+                <span className="w-2 h-2 bg-primary rounded-full animate-pulse"/>
+                Full-Stack Software Developer <br/>
+                & NestJS & React Specialist
               </span>
             </div>
 
@@ -102,8 +104,9 @@ export const Hero = () => {
                 </span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-                Hi, I'm Leilah López — a software developer specializing in
-                React, NestJS, and TypeScript. I love building user-experience centered, scalable, web
+                Hi, I'm Leilah López — a full-stack software developer specializing in
+                React, NestJS, and TypeScript. As a lifelong learner, educator, and an avid neuroscience consumer, 
+                I love building user-experience centered, scalable, web
                 applications that offer real solutions for clients.
               </p>
             </div>
@@ -119,23 +122,27 @@ export const Hero = () => {
               </AnimatedBorderButton>
             </div>
 
-            {/* Social Links */}
-            <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
-              <span className="text-sm text-muted-foreground">Follow me: </span>
-              {[
-                { icon: GithubIcon, href: "#" },
-                { icon: Linkedin, href: "#" },
-                { icon: Twitter, href: "#" },
-              ].map((social, idx) => (
+              {/* Social Links */}
+              <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
+                <span className="text-sm text-muted-foreground">Follow me:</span>
+
                 <a
-                  key={idx}
-                  href={social.href}
+                  href="https://github.com/leilahsmith"
                   className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
+                  aria-label="GitHub"
                 >
-                  {<social.icon className="w-5 h-5" />}
+                  <GithubIcon className="w-5 h-5" />
                 </a>
-              ))}
-            </div>
+
+                <a
+                  href="https://www.linkedin.com/in/leilahsmith317/"
+                  className="p-2 rounded-full glass hover:bg-primary/10 transition-all duration-300"
+                  aria-label="LinkedIn"
+                >
+                  <LinkedInIcon className="w-5 h-5" />
+                </a>
+              </div>
+
           </div>
         </div>
 
