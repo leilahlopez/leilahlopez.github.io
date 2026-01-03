@@ -7,6 +7,7 @@ import {
 import GithubIcon from "@/assets/github.svg?react";
 import LinkedInIcon from "@/assets/linkedin.svg?react";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
+import { useState } from "react";
 
 const skills = [
   "React",
@@ -32,24 +33,34 @@ const skills = [
 ];
 
 export const Hero = () => {
+  
+  const [particles] = useState(() =>
+    Array.from({ length: 30 }).map(() => ({
+      left: `${Math.random() * 100}%`,
+      top: `${Math.random() * 100}%`,
+      duration: 15 + Math.random() * 20,
+      delay: Math.random() * 5,
+    }))
+  );
+
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Full-width Hero Image (Bottom Layer) */}
-<div className="absolute inset-0 z-0 overflow-hidden">
-  <img
-    src="/cello-tech.png"
-    alt=""
-    className="
-      w-full h-full object-cover
-      object-right
-      opacity-90
-      pointer-events-none
-    "
-  />
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <img
+          src="/cello-tech.png"
+          alt=""
+          className="
+            w-full h-full object-cover
+            object-right
+            opacity-90
+            pointer-events-none
+          "
+        />
 
-  {/* Optional vignette / fade for readability */}
-  <div className="absolute inset-0 bg-linear-to-r from-background via-background/5 to-transparent" />
-</div>
+        {/* Optional vignette / fade for readability */}
+        <div className="absolute inset-0 bg-linear-to-r from-background via-background/5 to-transparent" />
+      </div>
       {/* Bg */}
       <div className="absolute inset-0">
         <img
@@ -62,22 +73,21 @@ export const Hero = () => {
 
       {/* Green Dots */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(30)].map((_, i) => (
+        {particles.map((p, i) => (
           <div
             key={i}
             className="absolute w-1.5 h-1.5 rounded-full opacity-60"
             style={{
               backgroundColor: "#20B2A6",
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animation: `slow-drift ${
-                15 + Math.random() * 20
-              }s ease-in-out infinite`,
-              animationDelay: `${Math.random() * 5}s`,
+              left: p.left,
+              top: p.top,
+              animation: `slow-drift ${p.duration}s ease-in-out infinite`,
+              animationDelay: `${p.delay}s`,
             }}
           />
         ))}
       </div>
+
 
       {/* Content */}
       <div className="container mx-auto px-6 pt-32 pb-20 relative z-10">
@@ -112,36 +122,47 @@ export const Hero = () => {
             </div>
 
             {/* CTAs */}
+            {/* CONTACT ME */}
             <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
-              <Button size="lg">
-                Contact Me <ArrowRight className="w-5 h-5" />
+              <a href="#contact">
+                <Button size="lg">
+                Contact Me 
+                <ArrowRight className="w-5 h-5" />
               </Button>
-              <AnimatedBorderButton>
-                <Download className="w-5 h-5" />
-                Download CV
-              </AnimatedBorderButton>
+              </a>
+              
+              {/* DOWNLOAD RESUME PDF */}
+              <a
+                href="/LLResume2026.pdf"
+                download
+              >
+                <AnimatedBorderButton>
+                  <Download className="w-5 h-5" />
+                  Download CV
+                </AnimatedBorderButton>
+              </a>
             </div>
 
-              {/* Social Links */}
-              <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
-                <span className="text-sm text-muted-foreground">Follow me:</span>
+            {/* Social Links */}
+            <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
+              <span className="text-sm text-muted-foreground">Follow me:</span>
 
-                <a
-                  href="https://github.com/leilahsmith"
-                  className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
-                  aria-label="GitHub"
-                >
-                  <GithubIcon className="w-5 h-5" />
-                </a>
+              <a
+                href="https://github.com/leilahsmith"
+                className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
+                aria-label="GitHub"
+              >
+                <GithubIcon className="w-5 h-5" />
+              </a>
 
-                <a
-                  href="https://www.linkedin.com/in/leilahsmith317/"
-                  className="p-2 rounded-full glass hover:bg-primary/10 transition-all duration-300"
-                  aria-label="LinkedIn"
-                >
-                  <LinkedInIcon className="w-5 h-5" />
-                </a>
-              </div>
+              <a
+                href="https://www.linkedin.com/in/leilahsmith317/"
+                className="p-2 rounded-full glass hover:bg-primary/10 transition-all duration-300"
+                aria-label="LinkedIn"
+              >
+                <LinkedInIcon className="w-5 h-5" />
+              </a>
+            </div>
 
           </div>
         </div>
