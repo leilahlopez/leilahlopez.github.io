@@ -14,8 +14,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "leilah.sdev@gmail.com",
-    href: "mailto:leilah.sdev@gmail.com",
+    value: "leilahlopez.dev@gmail.com",
+    href: "mailto:leilahlopez.dev@gmail.com",
   },
   {
     icon: Phone,
@@ -75,7 +75,7 @@ export const Contact = () => {
         message: "Message sent successfully! I'll get back to you soon.",
       });
       setFormData({ name: "", email: "", message: "" });
-    } catch (err) {
+    } catch (error) {
       console.error("EmailJS error:", error);
       setSubmitStatus({
         type: "error",
