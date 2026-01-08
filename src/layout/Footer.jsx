@@ -1,9 +1,8 @@
 import { Github, Linkedin, Twitter, Heart } from "lucide-react";
 
 const socialLinks = [
-  { icon: Github, href: "#", label: "GitHub" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Twitter, href: "#", label: "Twitter" },
+  { icon: Github, href: "https://github.com/leilahsmith/", label: "GitHub" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/leilahsmith317/", label: "LinkedIn" },
 ];
 
 const footerLinks = [
@@ -17,13 +16,13 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="py-12 border-t border-border">
+    <footer className="py-12 border-t border-border max-w-[100vw]">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="flex flex-col md:flex-row items-center gap-8">
           {/* Logo & Copyright */}
-          <div className="text-center md:text-left">
+          <div className="text-left md:text-left">
             <a href="#" className="text-xl font-bold tracking-tight">
-              PM<span className="text-primary">.</span>
+              LL<span className="text-primary">.</span>
             </a>
             <p className="text-sm text-muted-foreground mt-2">
               © {currentYear} Leilah López. All rights reserved.
@@ -31,7 +30,7 @@ export const Footer = () => {
           </div>
 
           {/* Links */}
-          <nav className="flex flex-wrap justify-center gap-6">
+          <nav className="flex flex-wrap justify-center gap-6 mx-auto">
             {footerLinks.map((link) => (
               <a
                 key={link.href}
@@ -44,7 +43,7 @@ export const Footer = () => {
           </nav>
 
           {/* Social Links */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-right gap-4">
             {socialLinks.map((social) => (
               <a
                 key={social.label}
